@@ -76,7 +76,7 @@ class HomeScreen extends StatelessWidget {
               color: ColorsApp.colorgray,
             ),
             SizedBox(
-              height: 600,
+              height: 570,
               child: ListView.builder(
                 itemCount: lists.length,
                 itemBuilder: (context,index){
@@ -86,6 +86,19 @@ class HomeScreen extends StatelessWidget {
             )  ],
           
         ),
+        bottomNavigationBar:  BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+          backgroundColor: ColorsApp.colorblack,
+          items:const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat,color: ColorsApp.colorWhite),label: 'chats',),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.call,color: ColorsApp.colorWhite),label: 'calls'),
+          BottomNavigationBarItem(icon: Icon(Icons.update,color: ColorsApp.colorWhite,),label: 'updates'),
+        ],),
+      
+
+    
       
       ),
     );

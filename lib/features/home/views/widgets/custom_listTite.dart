@@ -11,7 +11,7 @@ class CustomListtite extends StatelessWidget {
   Widget build(BuildContext context) {
     return  ListTile(
       leading: CircleAvatar(
-        radius: 50,
+        radius: 40,
         backgroundImage: NetworkImage(
           model.image),
       ),
@@ -20,7 +20,7 @@ class CustomListtite extends StatelessWidget {
       subtitle: Text(model.subtitle,
           style: style20white().copyWith(fontWeight: FontWeight.normal)),
       trailing: Text(
-        '10:10',
+        model.trailing,
         style: TextStyle(color: ColorsApp.colorgray),
       ),
     );
