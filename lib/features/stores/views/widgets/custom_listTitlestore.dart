@@ -3,24 +3,21 @@ import 'package:whatsapp_app/core/style/colors_app.dart';
 import 'package:whatsapp_app/core/style/text_style.dart';
 import 'package:whatsapp_app/model/models.dart';
 
-class CustomListtite extends StatelessWidget {
-  CustomListtite({super.key,required this.model});
-  Models model;
-
+class CustomListtitlestore extends StatelessWidget {
+ CustomListtitlestore({super.key,required this.modell});
+  Models modell;
   @override
   Widget build(BuildContext context) {
-    return  ListTile(
+    return ListTile(
       leading: CircleAvatar(
         radius: 40,
-        backgroundImage: NetworkImage(
-          model.image),
+        backgroundImage: NetworkImage(modell.image),
       ),
-      title: Text(model.title,
-          style: style16white()),
-      subtitle: Text(model.subtitle,
+      title: Text(modell.title, style: style16white()),
+      subtitle: Text(modell.subtitle,
           style: style16white().copyWith(fontWeight: FontWeight.normal)),
       trailing: Text(
-        model.trailing,
+        modell.trailing,
         style: TextStyle(color: ColorsApp.colorgray),
       ),
     );

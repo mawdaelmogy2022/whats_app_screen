@@ -1,74 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_app/core/style/app_bar.dart';
 import 'package:whatsapp_app/core/style/colors_app.dart';
+import 'package:whatsapp_app/core/style/list_home.dart';
 import 'package:whatsapp_app/core/style/string_app.dart';
 import 'package:whatsapp_app/core/style/text_style.dart';
-
 import 'package:whatsapp_app/features/home/views/widgets/custom_listTite.dart';
-import 'package:whatsapp_app/model/models.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+
+class HomeScreen extends StatefulWidget {
+  HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool isArabic = true;
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: TextDirection.rtl,
+      textDirection: isArabic ? TextDirection.rtl : TextDirection.ltr,
       child: Scaffold(
         backgroundColor: ColorsApp.colorblack,
-        appBar: AppBar(
-          backgroundColor: ColorsApp.colorblack,
-          title: const Text(
-            StringApp.whatsString,
-            style: TextStyle(
-                color: Colors.white,
-                letterSpacing: .5,
-                fontWeight: FontWeight.w800),
-          ),
-          actions: [
-            const Icon(
-              Icons.camera,
-              color: ColorsApp.colorWhite,
-            ),
-            const SizedBox(
-              width: 16,
-            ),
-            const Icon(
-              Icons.search,
-              color: ColorsApp.colorWhite,
-            ),
-            PopupMenuButton(
-                iconColor: ColorsApp.colorWhite,
-                color: ColorsApp.colorblack,
-                itemBuilder: (context) {
-                  return  [
-                    PopupMenuItem(
-                      child: Text(
-                        'مجموعة جديدة ',
-                        style: style() //TextStyle(color: Colors.white),
-                      ),
-                    ),
-                    PopupMenuItem(
-                      child: Text(
-                        ' انشاء جروب ',
-                        style: style(),
-                      ),
-                    ),
-                    PopupMenuItem(
-                      child: Text(
-                        'ربط جهاز ',
-                        style: style(),
-                      ),
-                    ),
-                    PopupMenuItem(
-                      child: Text(
-                        'الاعدادات ',
-                        style: style(),
-                      ),
-                    ),
-                  ];
-                })
-          ],
-        ),
+        appBar:customAppbar(title: StringApp.whatsString),
         body: Column(
           children: [
             const Divider(
@@ -78,31 +33,35 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 570,
               child: ListView.builder(
-                itemCount: lists.length,
-                itemBuilder: (context,index){
-                  return CustomListtite(model: lists[index]);
-                }
-                        ),
-            )  ],
-          
+                  itemCount: lists.length,
+                  itemBuilder: (context, index) {
+                    return CustomListtite(model: lists[index]);
+                  }),
+            )
+          ],
         ),
-        bottomNavigationBar:  BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
+        bottomNavigationBar: BottomNavigationBar(
           backgroundColor: ColorsApp.colorblack,
-          items:const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat,color: ColorsApp.colorWhite),label: 'chats',),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.call,color: ColorsApp.colorWhite),label: 'calls'),
-          BottomNavigationBarItem(icon: Icon(Icons.update,color: ColorsApp.colorWhite,),label: 'updates'),
-        ],),
-      
-
-    
-      
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.chat, color: ColorsApp.colorWhite),
+              label: 'chats',
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.call, color: ColorsApp.colorWhite),
+                label: 'calls'),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.update,
+                  color: ColorsApp.colorWhite,
+                ),
+                label: 'updates'),
+          ],
+        ),
       ),
     );
   }
 }
 
 
+ 
