@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_app/core/style/colors_app.dart';
-import 'package:whatsapp_app/core/style/string_app.dart';
 import 'package:whatsapp_app/core/style/text_style.dart';
 
 AppBar customAppbar({required String title}) {

@@ -1,4 +1,4 @@
-import 'package:whatsapp_app/model/storeModel.dart';
+import 'package:whatsapp_app/model/store_model.dart';
 
 List<StoreModel> ListStore = [
   StoreModel(

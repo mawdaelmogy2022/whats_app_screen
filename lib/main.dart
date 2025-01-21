@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_app/features/home/views/screens/home_screen.dart';
 
-import 'package:whatsapp_app/features/stores/views/screens/stores_screen.dart';
+import 'package:whatsapp_app/features/updates/views/screens/updates_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +13,14 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: StoresScreen(),
+      home: PageView(
+        children: const [
+          HomeScreen(),
+          UpdatesScreen(),
+        ],
+      ),
     );
   }
 }

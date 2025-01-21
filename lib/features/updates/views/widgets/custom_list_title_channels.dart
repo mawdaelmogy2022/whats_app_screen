@@ -3,8 +3,8 @@ import 'package:whatsapp_app/core/style/colors_app.dart';
 import 'package:whatsapp_app/core/style/text_style.dart';
 import 'package:whatsapp_app/model/models.dart';
 
-class CustomListtitlestore extends StatelessWidget {
- CustomListtitlestore({super.key,required this.modell});
+class CustomListtitlechannels extends StatelessWidget {
+CustomListtitlechannels({super.key,required this.modell});
   Models modell;
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_app/core/style/text_style.dart';
-import 'package:whatsapp_app/model/storeModel.dart';
+import 'package:whatsapp_app/model/store_model.dart';
 
 class CustomScrollStores extends StatelessWidget {
   CustomScrollStores({super.key,required this.storeModel});

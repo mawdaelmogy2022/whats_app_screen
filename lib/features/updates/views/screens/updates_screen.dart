@@ -5,11 +5,12 @@ import 'package:whatsapp_app/core/style/list_channel.dart';
 import 'package:whatsapp_app/core/style/list_store.dart';
 import 'package:whatsapp_app/core/style/string_app.dart';
 import 'package:whatsapp_app/core/style/text_style.dart';
-import 'package:whatsapp_app/features/stores/views/widgets/custom_listTitlestore.dart';
-import 'package:whatsapp_app/features/stores/views/widgets/custom_scroll_srore.dart';
+import 'package:whatsapp_app/features/updates/views/widgets/custom_bottom_navigation_bar.dart';
+import 'package:whatsapp_app/features/updates/views/widgets/custom_list_title_channels.dart';
+import 'package:whatsapp_app/features/updates/views/widgets/custom_scroll_stores.dart';
 
-class StoresScreen extends StatelessWidget {
-  const StoresScreen({super.key});
+class UpdatesScreen extends StatelessWidget {
+  const UpdatesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,13 +52,6 @@ class StoresScreen extends StatelessWidget {
                           style: style16white().copyWith(
                               color: Colors.green, fontWeight: FontWeight.bold),
                         ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.fork_left,
-                            color: Colors.green,
-                          ),
-                        ),
                       ],
                     ),
                     const SizedBox(height: 20),
@@ -68,37 +62,14 @@ class StoresScreen extends StatelessWidget {
             SliverList(
               delegate: SliverChildBuilderDelegate(
                 (context, index) {
-                  return CustomListtitlestore(modell: ListChannel[index]);
+                  return CustomListtitlechannels(modell: ListChannel[index]);
                 },
                 childCount: ListChannel.length,
               ),
             ),
           ],
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          unselectedItemColor: ColorsApp.colorWhite,
-          selectedItemColor: Colors.green,
-          backgroundColor: ColorsApp.colorblack,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.chat,
-              ),
-              label: 'الدردشات',
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.group), label: 'المجتمعات'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.update), label: 'المستجدات'),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.call,
-              ),
-              label: 'المكالمات',
-            ),
-          ],
-        ),
+        bottomNavigationBar: const CustomBottomNavigationBar()
       ),
     );
   }

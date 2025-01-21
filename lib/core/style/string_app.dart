@@ -1,4 +1,4 @@
 class StringApp {
-  static const whatsString = 'واتساب';
-    static const storeString = 'المستجدات';
+  static const whatsString = "WhatsApp";
+    static const storeString = "Updates";
 }
